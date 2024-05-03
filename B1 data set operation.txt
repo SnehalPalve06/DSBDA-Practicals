@@ -1,0 +1,46 @@
+1)import pandas as pd
+2)#data = {"Roll-num":  [10,20,30,40,50,60,70],  "Age":[12,14,13,12,14,13,15],"NAME":['John','Rheana','Joseph','Amanti','Alexa','Siri']}
+3)data=pd.read_csv('dataset_Facebook.csv')
+4)block = pd.DataFrame(data)
+5)print("original Data frame:\n")
+6)print(block)
+7)print(block.loc[[0,1,3]])
+8)print(block.loc[0:3])
+9)print(block.loc[1:2])
+10)print(block.loc[0:2,['Type','like']])
+11)print(block.iloc[[0,1,3,6],[0,2]])
+ merging
+import pandas as pd
+d1={'Name':['Pankaj','Meghna','Lisa'],'country':['india','india','USA'],'Role':['ceo','CTO','CTO']}
+df1=pd.DataFrame(d1)
+print('Dataframe 1:\n',df1)
+df2=pd.DataFrame({'ID':[1,2,3],'Name':['Pankaj','Anupam','Amit']})
+print('DataFrame 2:\n',df2)
+df_merged=df1.merge(df2)
+print('Result Inner Join:\n' ,df_merged)
+print('Result left join:\n',df1.merge(df2,how='left'))
+print('result right join:\n', df1.merge(df2,how='right'))
+print('result outer join:\n',df1.merge(df2,how='outer'))
+
+#sorting
+import pandas as pd
+csvData=pd.read_csv("records.csv")
+print("\nBefore Sorting:")
+print(csvData)
+csvData.sort_values(["Salary"],axis=0,ascending=[True],inplace=True)
+print("\nAfter sorting:")
+print(csvData)
+
+#Transpose
+import pandas as pd
+df=pd.read_csv('records.csv')
+print(df)
+print(df.T)
+print(df.shape)
+print(df.size)
+
+#shap
+import pandas as pd
+df=pd.read_csv('records.csv')
+print(df)
+print(df.shape)
